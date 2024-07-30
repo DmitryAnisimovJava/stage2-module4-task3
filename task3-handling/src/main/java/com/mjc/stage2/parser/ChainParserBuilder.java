@@ -19,6 +19,6 @@ public class ChainParserBuilder {
                 .reduce((abstractTextParser, abstractTextParser2) -> {
                     abstractTextParser.setNextParser(abstractTextParser2);
                     return abstractTextParser2;
-                }).orElse(null);
+                }).orElse(new LexemeParser(new WordParser()));
     }
 }
