@@ -30,7 +30,7 @@ public class LexemeParser extends AbstractTextParser {
         }
         String[] split = string.trim().split(LEXEME_REGEX);
         Arrays.stream(split)
-                .filter(word -> PATTERN.matcher(word).matches())
+                .filter(word -> PATTERN.matcher(word).matches() || !word.isBlank())
                 .forEach(word -> {
                     TextComponent wordTextComponent = new TextComponent(TextComponentType.WORD);
                     abstractTextComponent.add(wordTextComponent);
